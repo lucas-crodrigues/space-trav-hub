@@ -1,0 +1,23 @@
+.rocket {
+  display: flex;
+}
+
+.rocketImage img {
+  width: 15rem;
+  height: 12rem;
+  padding: 1rem 2rem 1rem 1rem;
+}
+
+button {
+  background-color: rgb(48, 76, 255);
+  color: white;
+  height: 3rem;
+  width: 8rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(0.8);
+}
