@@ -31,10 +31,16 @@ ul {
   display: flex;
 }
 
+a,
+button {
+  transition: all 0.3s ease-out;
+}
+
 a {
   text-decoration: none;
-  color: blue;
+  color: rgb(48, 76, 255);
   padding: 0 1rem;
+  font-weight: 500;
 }
 
 a:hover {
