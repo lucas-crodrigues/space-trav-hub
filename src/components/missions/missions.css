@@ -13,11 +13,11 @@
   flex-grow: 1;
 }
 
-.mission-li>* {
+.mission-li > * {
   padding: 0.3em 0.2em 30px;
   height: 100%;
   margin: 0;
-  border: 1px solid #DEE2E6;
+  border: 1px solid #dee2e6;
   border-bottom: none;
 }
 
@@ -26,14 +26,14 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 5px
+  padding: 5px;
 }
 
 .mission-li:first-child * {
   font-weight: 900;
 }
 
-.mission-li:nth-child(1n+2) .mission-status>p {
+.mission-li:nth-child(1n+2) .mission-status > p {
   width: max-content;
   border-radius: 8px;
   padding: 0.3em;
@@ -53,7 +53,7 @@
   padding: 0;
 }
 
-.btn-container>button {
+.btn-container > button {
   width: max-content;
   height: max-content;
   font-size: 1.2em;
@@ -64,5 +64,5 @@
 }
 
 .mission-li:nth-child(even) {
-  background: #f2f2f2
+  background: #f2f2f2;
 }
