@@ -17,6 +17,7 @@ const Header = () => {
       <ul>
         <NavLink to="/" onClick={handleClick}>Rockets</NavLink>
         <NavLink to="/missions" onClick={handleClick}>Missions</NavLink>
+        <li>|</li>
         <NavLink to="/user" onClick={handleClick}>My Profile</NavLink>
       </ul>
     </header>
