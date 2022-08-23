@@ -13,11 +13,14 @@ button {
   color: white;
   height: 3rem;
   width: 8rem;
-  border: none;
+  border: 1px solid white;
   border-radius: 0.5rem;
   cursor: pointer;
 }
 
 button:hover {
   filter: brightness(0.8);
+  background-color: white;
+  color: black;
+  border: 1px solid black;
 }
