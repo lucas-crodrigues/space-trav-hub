@@ -12,7 +12,7 @@ header {
   justify-content: space-between;
   align-items: flex-end;
   border-bottom: 1px solid black;
-  padding: 0 1rem;
+  padding: 0 1rem 1rem 1rem;
 }
 
 .headerLogo {
