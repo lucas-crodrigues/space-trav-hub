@@ -12,6 +12,7 @@ export const getMissionsDataAPI = () => async (dispatch) => {
         mission_id: element.mission_id,
         mission_name: element.mission_name,
         description: element.description,
+        status: 'not a member',
       });
     });
     dispatch({
