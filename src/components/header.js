@@ -10,7 +10,10 @@ const Header = () => {
 
   return (
     <header>
-      <img src={logo} alt="logo" className="logo" />
+      <div className="headerLogo">
+        <img src={logo} alt="logo" className="logo" />
+        <h1>Space Travelers&apos; Hub</h1>
+      </div>
       <ul>
         <NavLink to="/" onClick={handleClick}>Rockets</NavLink>
         <NavLink to="/missions" onClick={handleClick}>Missions</NavLink>
