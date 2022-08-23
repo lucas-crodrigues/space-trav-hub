@@ -26,17 +26,17 @@ const Rockets = () => {
   if (rocketsStatus === 'loading') {
     content = <p>Loading...</p>;
   } else if (rocketsStatus === 'succeed') {
-    // const keys = Object.keys(rocketList[0]);
-    // const library = [];
-    // keys.forEach((element) => {
-    //   library.push({
-    //     id: element,
-    //     author: rocketList[0][element][0].author,
-    //     title: rocketList[0][element][0].title,
-    //     category: rocketList[0][element][0].category,
-    //   });
-    // });
-    content = <RocketList rocketsList={rocketList} />;
+    const rocketInfo = rocketList[0];
+    const library = [];
+    rocketInfo.forEach((element) => {
+      library.push({
+        id: element.id.toString(),
+        rocket_name: element.rocket_name,
+        description: element.description,
+        flickr_images: element.flickr_images[0],
+      });
+    });
+    content = <RocketList rocketsList={library} />;
   } else if (rocketsStatus === 'fail') {
     content = <p>{error}</p>;
   }
