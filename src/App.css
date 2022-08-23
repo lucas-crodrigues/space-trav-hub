@@ -27,15 +27,23 @@ header {
   height: 50px;
 }
 
+ul {
+  display: flex;
+}
+
 a {
   text-decoration: none;
   color: blue;
-  padding-right: 1rem;
+  padding: 0 1rem;
 }
 
 a:hover {
   color: black;
   text-decoration: underline;
+}
+
+li {
+  list-style: none;
 }
 
 .active {
