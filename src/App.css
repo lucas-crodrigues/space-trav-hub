@@ -1,3 +1,27 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+#root {
+  width: 90vw;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid black;
+  padding: 0 1rem;
+}
+
+.headerLogo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 24rem;
+}
+
 .logo {
   width: 50px;
   height: 50px;
@@ -5,6 +29,13 @@
 
 a {
   text-decoration: none;
+  color: blue;
+  padding-right: 1rem;
+}
+
+a:hover {
+  color: black;
+  text-decoration: underline;
 }
 
 .active {
