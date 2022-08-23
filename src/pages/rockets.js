@@ -7,6 +7,7 @@ import {
   getRocketsStatus,
   getRocketsError,
 } from '../redux/rockets/fetchRockets';
+import './rockets.css';
 
 const Rockets = () => {
   const dispatch = useDispatch();
