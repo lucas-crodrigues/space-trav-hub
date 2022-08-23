@@ -6,9 +6,17 @@ export const getMissionsDataAPI = () => async (dispatch) => {
   try {
     const res = await apiService.getAll();
     const { data } = res;
+    const selectedData = [];
+    data.forEach((element) => {
+      selectedData.push({
+        mission_id: element.mission_id,
+        mission_name: element.mission_name,
+        description: element.description,
+      });
+    });
     dispatch({
       type: GET_MISSIONS_DATA,
-      payload: data,
+      payload: selectedData,
     });
   } catch (err) {
     console.log(err);
