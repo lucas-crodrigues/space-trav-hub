@@ -24,9 +24,10 @@ const Missions = () => {
       {data.map((mission) => (
         <MissionLi
           key={mission.mission_id}
+          id={mission.mission_id}
           name={mission.mission_name}
           description={mission.description}
-          status={mission.status}
+          reserved={mission.reserved}
         />
       ))}
     </ul>

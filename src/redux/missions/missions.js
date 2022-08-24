@@ -1,6 +1,7 @@
 import apiService from '../../api/missionsApi';
 
 const GET_MISSIONS_DATA = 'space-thub/misssions/GET_MISSIONS_DATA';
+const JOIN_MISSION = 'space-thub/misssions/JOIN_MISSION';
 
 export const getMissionsDataAPI = () => async (dispatch) => {
   try {
@@ -12,7 +13,7 @@ export const getMissionsDataAPI = () => async (dispatch) => {
         mission_id: element.mission_id,
         mission_name: element.mission_name,
         description: element.description,
-        status: 'not a member',
+        reserved: false,
       });
     });
     dispatch({
@@ -24,10 +25,25 @@ export const getMissionsDataAPI = () => async (dispatch) => {
   }
 };
 
+export const joinMissionAction = (id) => ({
+  type: JOIN_MISSION,
+  payload: id,
+});
+
 const missionsReducer = (state = [], action) => {
   switch (action.type) {
     case GET_MISSIONS_DATA:
       return action.payload;
+    case JOIN_MISSION:
+      return state.map((mission) => {
+        if (mission.mission_id !== action.payload) {
+          return mission;
+        }
+        return {
+          ...mission,
+          reserved: !mission.reserved,
+        };
+      });
     default:
       return state;
   }
