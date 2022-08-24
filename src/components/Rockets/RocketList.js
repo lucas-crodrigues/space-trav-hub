@@ -5,11 +5,12 @@ const RocketList = ({ rocketsList }) => (
   <div className="rocketList">
     { rocketsList.map((rocket) => (
       <Rocket
-        key={`rocket_${rocket.id}`}
-        id={rocket.id}
-        rocket_name={rocket.rocket_name}
-        description={rocket.description}
-        flickr_images={rocket.flickr_images}
+        key={`rocket_${rocket.rocketId}`}
+        rocketId={rocket.rocketId}
+        rocketName={rocket.rocketName}
+        rocketDesc={rocket.rocketDesc}
+        rocketImg={rocket.rocketImg}
+        reserved={rocket.reserved}
       />
     ))}
   </div>
