@@ -42,7 +42,7 @@
 }
 
 .mission-li:nth-child(1n+2) .mission-status > .joined {
-  background: #18A2B8;
+  background: #18a2b8;
   color: #fff;
   text-decoration: none;
 }
@@ -70,8 +70,8 @@
 }
 
 .btn-container.joined > button {
-  border: 1px solid #ff0044;
-  color: #ff0044;
+  border: 1px solid #f04;
+  color: #f04;
 }
 
 .mission-li:nth-child(even) {
