@@ -1,37 +1,59 @@
-/* eslint-disable camelcase */
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
+import { reserveToggle } from '../../redux/rockets/fetchRockets';
 
 const Rocket = (props) => {
   const {
-    id, rocket_name, description, flickr_images,
+    rocketId, rocketName, rocketDesc, rocketImg, reserved,
   } = props;
 
   const dispatch = useDispatch();
 
-  const handleReserve = () => {
-    dispatch(console.log(`the rocket ${id}:${rocket_name} is reserved`));
+  const handleReserve = (e) => {
+    console.log('Ill reserve');
+    const target = e.target.id;
+    console.log(reserved);
+    dispatch(reserveToggle(target));
+    console.log(reserved);
   };
+
+  // const handleReserve = () => {
+  //   console.log('Ill reserve');
+  //   console.log(rocketId);
+  //   console.log(reserved);
+  //   dispatch(reserveRocket(rocketId));
+  //   console.log(reserved);
+  // };
+
+  // const handleCancel = () => {
+  //   dispatch(cancelReserve(rocketId));
+  // };
 
   return (
     <div className="rocket">
       <div className="rocketImage">
-        <img src={flickr_images} alt={`${rocket_name}`} />
+        <img src={rocketImg} alt={`${rocketName}`} />
       </div>
       <div className="rocketInfo">
-        <h3>{rocket_name}</h3>
-        <p>{description}</p>
-        <button type="button" onClick={handleReserve}>Reserve Rocket</button>
+        <h3>{rocketName}</h3>
+        <p>
+          {reserved === true ? (<span className="Reserved">Reserved</span>) : (<span className="Reserved">Available</span>)}
+          {rocketDesc}
+        </p>
+        {reserved === true
+          ? (<button type="button" id={rocketId} onClick={handleReserve}>Cancel Reservation</button>)
+          : (<button type="button" id={rocketId} onClick={handleReserve}>Reserve Rocket</button>)}
       </div>
     </div>
   );
 };
 
 Rocket.propTypes = {
-  id: PropTypes.string.isRequired,
-  rocket_name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  flickr_images: PropTypes.string.isRequired,
+  rocketId: PropTypes.string.isRequired,
+  rocketName: PropTypes.string.isRequired,
+  rocketDesc: PropTypes.string.isRequired,
+  rocketImg: PropTypes.string.isRequired,
+  reserved: PropTypes.bool.isRequired,
 };
 
 export default Rocket;
