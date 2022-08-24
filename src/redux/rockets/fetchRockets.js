@@ -1,7 +1,6 @@
 /* eslint-disable no-param-reassign */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
-// import missionsReducer from '../missions/missions';
 
 const BASE_URL = 'https://api.spacexdata.com/v3/rockets';
 
@@ -19,7 +18,6 @@ export const getRockets = createAsyncThunk(
 
 const initialState = {
   rockets: [],
-  missions: [],
   status: 'initial',
   error: null,
 };
