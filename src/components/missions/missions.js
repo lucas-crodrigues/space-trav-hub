@@ -11,7 +11,7 @@ const MissionLi = ({
     dispatch(joinMissionAction(id));
   };
 
-  const changeContentStatus = (bool) => (bool ? 'member' : 'not a member');
+  const changeContentStatus = (bool) => (bool ? 'active member' : 'not a member');
 
   return (
     <li className="mission-li">
