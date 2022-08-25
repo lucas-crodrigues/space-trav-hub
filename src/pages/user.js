@@ -26,7 +26,7 @@ const User = () => {
             />
           ))}
         </ul>
-        <div className="vertical-line"></div>
+        <div className="vertical-line" />
         <ul className="user-ul">
           <div className="user-title"> My Missions</div>
           {userData.rockets.map((rocket) => (
