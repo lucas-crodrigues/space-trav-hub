@@ -1,37 +1,39 @@
-/* eslint-disable camelcase */
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
+import { reserveToggle } from '../../redux/rockets/fetchRockets';
 
 const Rocket = (props) => {
-  const {
-    id, rocket_name, description, flickr_images,
-  } = props;
+  const { rocket } = props;
 
   const dispatch = useDispatch();
-
-  const handleReserve = () => {
-    dispatch(console.log(`the rocket ${id}:${rocket_name} is reserved`));
-  };
 
   return (
     <div className="rocket">
       <div className="rocketImage">
-        <img src={flickr_images} alt={`${rocket_name}`} />
+        <img src={rocket.flickr_images} alt={`${rocket.rocket_name}`} />
       </div>
       <div className="rocketInfo">
-        <h3>{rocket_name}</h3>
-        <p>{description}</p>
-        <button type="button" onClick={handleReserve}>Reserve Rocket</button>
+        <h3>{rocket.rocket_name}</h3>
+        <p>
+          {rocket.reserved ? (<small className="reserved">Reserved</small>) : (<small className="available">Available</small>)}
+          {rocket.description}
+        </p>
+        <button className={rocket.reserved ? 'activeButton' : ''} type="button" onClick={() => dispatch(reserveToggle({ rocket }))}>{rocket.reserved ? 'Cancel Reservation' : `Reserve ${rocket.rocket_name}` }</button>
       </div>
     </div>
   );
 };
 
 Rocket.propTypes = {
-  id: PropTypes.string.isRequired,
-  rocket_name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  flickr_images: PropTypes.string.isRequired,
+  rocket: PropTypes.shape(
+    {
+      id: PropTypes.number,
+      rocket_name: PropTypes.string,
+      description: PropTypes.string,
+      reserved: PropTypes.bool,
+      flickr_images: PropTypes.arrayOf(PropTypes.string),
+    },
+  ).isRequired,
 };
 
 export default Rocket;

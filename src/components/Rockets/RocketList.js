@@ -1,22 +1,29 @@
-import PropTypes from 'prop-types';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getRockets } from '../../redux/rockets/fetchRockets';
 import Rocket from './Rocket';
 
-const RocketList = ({ rocketsList }) => (
-  <div className="rocketList">
-    { rocketsList.map((rocket) => (
-      <Rocket
-        key={`rocket_${rocket.id}`}
-        id={rocket.id}
-        rocket_name={rocket.rocket_name}
-        description={rocket.description}
-        flickr_images={rocket.flickr_images}
-      />
-    ))}
-  </div>
-);
+const RocketList = () => {
+  const dispatch = useDispatch();
 
-RocketList.propTypes = {
-  rocketsList: PropTypes.instanceOf(Array).isRequired,
+  const rockets = useSelector((state) => state.rockets);
+
+  useEffect(() => {
+    if (!rockets.length) {
+      dispatch(getRockets());
+    }
+  });
+
+  return (
+    <div className="rocketList">
+      { rockets.map((rocket) => (
+        <Rocket
+          key={`rocket_${rocket.id}`}
+          rocket={rocket}
+        />
+      ))}
+    </div>
+  );
 };
 
 export default RocketList;

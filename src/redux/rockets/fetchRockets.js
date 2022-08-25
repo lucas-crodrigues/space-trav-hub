@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
@@ -16,34 +15,22 @@ export const getRockets = createAsyncThunk(
   },
 );
 
-const initialState = {
-  rockets: [],
-  status: 'initial',
-  error: null,
-};
+const initialState = [];
 
 export const rocketSlice = createSlice({
   name: 'rockets',
   initialState,
-  reducers: {},
+  reducers: {
+    reserveToggle: (state, action) => state.map((rocket) => (
+      rocket.id === action.payload.rocket.id ? { ...rocket, reserved: !rocket.reserved } : rocket
+    )),
+  },
   extraReducers(builder) {
     builder
-      .addCase(getRockets.pending, (state) => {
-        state.status = 'loading';
-      })
-      .addCase(getRockets.fulfilled, (state, action) => {
-        state.status = 'succeed';
-        state.rockets = [...state.rockets, action.payload];
-      })
-      .addCase(getRockets.rejected, (state, action) => {
-        state.status = 'fail';
-        state.error = action.error.message;
-      });
+      .addCase(getRockets.fulfilled, (state, action) => action.payload);
   },
 });
 
-export const selectAllRockets = (state) => state.rockets.rockets;
-export const getRocketsStatus = (state) => state.rockets.status;
-export const getRocketsError = (state) => state.rockets.error;
+export const { reserveToggle } = rocketSlice.actions;
 
 export default rocketSlice.reducer;
