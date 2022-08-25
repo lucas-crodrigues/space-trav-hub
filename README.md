@@ -1,6 +1,54 @@
-# Getting Started with Create React App
+![](https://img.shields.io/badge/Microverse-blueviolet)
+# Space Travelers' Hub
 
+This is the Space Travelers' Hub app initialized in the fourth week of the third module in the Microverse program. It was done using the SpaceEx API <br>
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Built With
+![](https://img.shields.io/badge/-HTML-orange) ![](https://img.shields.io/badge/-CSS-blue) ![](https://img.shields.io/badge/-JavaScript-yellow) ![](https://img.shields.io/badge/-React-cyan)
+- HTML/CSS
+- Javascript
+- Visual Studio Code
+- Node.js
+- Jest
+- React
+- Redux
+
+## Live Demo
+
+ [N/A](#)
+
+ ## Video Preview
+
+ [N/A](#)
+
+ ## Getting Started
+
+To clone the repo run the line `git clone https://github.com/lucas-crodrigues/space-trav-hub.git` on your console.
+
+To get a local copy up and running, run these command lines on your console:<br>
+  1- `cd space-trav-hub` <br>
+  2-  `npm install` <br>
+  3-  `npm start` <br>
+  4-  To run tests use `npm test` <br>
+
+  ## Authors
+
+👤 **Lucas Costa Rodrigues**
+
+GitHub: [@lucas-crodrigues](https://github.com/lucas-crodrigues)
+
+Twitter: [@lcrodrigues58](https://twitter.com/lcrodrigues58)
+
+LinkedIn: [Lucas Costa Rodrigues](https://www.linkedin.com/in/lucascostarodrigues/)
+
+👤 **Alejandro Torres**
+
+GitHub: [@aizjicod](https://github.com/aizjicod)
+
+Twitter: [@aizijijr](https://twitter.com/aizijijr)
+
+LinkedIn: [Alejandro Jose Torres Valero](https://www.linkedin.com/in/aiziji/)
 
 ## Available Scripts
 
@@ -39,32 +87,19 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## 🤝 Contributing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Contributions, issues, and feature requests are welcome!
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Feel free to check the [issues page](https://github.com/lucas-crodrigues/space-trav-hub/issues).
 
-### Code Splitting
+## Show your support
+Give a ⭐️ if you like this project!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Acknowledgments
 
-### Analyzing the Bundle Size
+[Microverse](https://github.com/microverseinc) team. <br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📝 License
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is MIT licensed.

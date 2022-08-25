@@ -23,16 +23,18 @@ const User = () => {
             <UserMissions
               key={mission.mission_id}
               name={mission.mission_name}
+              wiki={mission.wikipedia}
             />
           ))}
         </ul>
         <div className="vertical-line" />
         <ul className="user-ul">
-          <div className="user-title"> My Missions</div>
+          <div className="user-title"> My Rockets</div>
           {userData.rockets.map((rocket) => (
             <UserRockets
               key={rocket.id}
               name={rocket.rocket_name}
+              wiki={rocket.wikipedia}
             />
           ))}
         </ul>
