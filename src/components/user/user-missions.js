@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 const UserMissions = ({ name }) => (
-  <li className="user-missions-li">
+  <li className="user-li">
     <p>{name}</p>
   </li>
 );
