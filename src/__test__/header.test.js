@@ -16,4 +16,4 @@ test('check snapshot of header', () => {
     </React.StrictMode>,
   );
   expect(component).toMatchSnapshot();
-})
+});

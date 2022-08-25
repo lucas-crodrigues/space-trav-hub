@@ -11,16 +11,17 @@ test('check snapshot of missions list', () => {
       <Provider store={store}>
         <Router>
           <MissionLi
-            name='mission'
-            description='new description'
+            name="mission"
+            description="new description"
             reserved={false}
-            id='1' />
+            id="1"
+          />
         </Router>
       </Provider>
     </React.StrictMode>,
   );
   expect(component).toMatchSnapshot();
-})
+});
 
 test('check snapshot of missions list 2', () => {
   const component = render(
@@ -28,13 +29,14 @@ test('check snapshot of missions list 2', () => {
       <Provider store={store}>
         <Router>
           <MissionLi
-            name='mission 2'
-            description='new description 2'
-            reserved={true}
-            id='8' />
+            name="mission 2"
+            description="new description 2"
+            reserved
+            id="8"
+          />
         </Router>
       </Provider>
     </React.StrictMode>,
   );
   expect(component).toMatchSnapshot();
-})
+});

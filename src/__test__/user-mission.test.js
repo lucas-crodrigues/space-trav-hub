@@ -10,23 +10,23 @@ test('check snapshot of user mission seccion', () => {
     <React.StrictMode>
       <Provider store={store}>
         <Router>
-         <UserMissions name='mission 1' />
+          <UserMissions name="mission 1" />
         </Router>
       </Provider>
     </React.StrictMode>,
   );
   expect(component).toMatchSnapshot();
-})
+});
 
 test('check snapshot of user mission seccion', () => {
   const component = render(
     <React.StrictMode>
       <Provider store={store}>
         <Router>
-        <UserMissions name='mission 2' />
+          <UserMissions name="mission 2" />
         </Router>
       </Provider>
     </React.StrictMode>,
   );
   expect(component).toMatchSnapshot();
-})
+});
