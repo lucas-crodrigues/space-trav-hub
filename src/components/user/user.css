@@ -1,0 +1,28 @@
+.user-page {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+.vertical-line {
+  border-right: 1px solid #aaa;
+}
+
+.user-ul {
+  display: flex;
+  flex-flow: column;
+  width: 45%;
+  padding: 0;
+}
+
+.user-title {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.user-li {
+  border: 1px solid #aaa;
+  padding: 0.5em 0 0.5em 2em;
+  margin-bottom: 0.2rem;
+}
