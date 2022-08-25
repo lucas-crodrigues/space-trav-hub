@@ -10,7 +10,7 @@ test('check snapshot of user mission seccion', () => {
     <React.StrictMode>
       <Provider store={store}>
         <Router>
-          <UserMissions name="mission 1" />
+          <UserMissions name="mission 1" wiki="wiki1" />
         </Router>
       </Provider>
     </React.StrictMode>,
@@ -23,7 +23,7 @@ test('check snapshot of user mission seccion', () => {
     <React.StrictMode>
       <Provider store={store}>
         <Router>
-          <UserMissions name="mission 2" />
+          <UserMissions name="mission 2" wiki="wiki2" />
         </Router>
       </Provider>
     </React.StrictMode>,
