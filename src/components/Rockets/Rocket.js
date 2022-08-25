@@ -3,17 +3,9 @@ import { useDispatch } from 'react-redux';
 import { reserveToggle } from '../../redux/rockets/fetchRockets';
 
 const Rocket = (props) => {
-  const {
-    rocket,
-  } = props;
+  const { rocket } = props;
 
   const dispatch = useDispatch();
-
-  const handleReserve = () => {
-    console.log('Ill reserve');
-    console.log('hello', dispatch(reserveToggle(rocket.id)));
-    return dispatch(reserveToggle(rocket.id));
-  };
 
   return (
     <div className="rocket">
@@ -23,13 +15,10 @@ const Rocket = (props) => {
       <div className="rocketInfo">
         <h3>{rocket.rocket_name}</h3>
         <p>
-          {rocket.reserved ? (<small className="reserved">Reserved</small>) : (<small className="reserved">Available</small>)}
+          {rocket.reserved ? (<small className="reserved">Reserved</small>) : (<small className="available">Available</small>)}
           {rocket.description}
         </p>
-        <button className={rocket.reserved ? 'activeButton' : 'notActiveButton'} type="button" onClick={() => dispatch(reserveToggle({ rocket }))}>{rocket.reserved ? 'Cancel Reservation' : `reserve ${rocket.rocket_name}` }</button>
-        {rocket.reserved
-          ? (<button type="button" id={rocket.id} onClick={handleReserve}>Cancel Reservation</button>)
-          : (<button type="button" id={rocket.id} onClick={handleReserve}>Reserve Rocket</button>)}
+        <button className={rocket.reserved ? 'activeButton' : ''} type="button" onClick={() => dispatch(reserveToggle({ rocket }))}>{rocket.reserved ? 'Cancel Reservation' : `Reserve ${rocket.rocket_name}` }</button>
       </div>
     </div>
   );
@@ -46,13 +35,5 @@ Rocket.propTypes = {
     },
   ).isRequired,
 };
-
-// Rocket.propTypes = {
-//   rocketId: PropTypes.string.isRequired,
-//   rocketName: PropTypes.string.isRequired,
-//   rocketDesc: PropTypes.string.isRequired,
-//   rocketImg: PropTypes.string.isRequired,
-//   reserved: PropTypes.bool.isRequired,
-// };
 
 export default Rocket;
