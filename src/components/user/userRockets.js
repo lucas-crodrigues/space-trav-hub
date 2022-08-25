@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 
-const UserMissions = ({ name }) => (
+const UserRockets = ({ name }) => (
   <li className="user-li">
     <p>{name}</p>
   </li>
 );
 
-UserMissions.propTypes = {
+UserRockets.propTypes = {
   name: PropTypes.string.isRequired,
 };
 
-export default UserMissions;
+export default UserRockets;
