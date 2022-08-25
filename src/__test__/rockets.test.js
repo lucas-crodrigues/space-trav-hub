@@ -10,11 +10,11 @@ describe('Test suite for all Rockets features', () => {
   test('check snapshot of rocket list', () => {
     const rocketInst = {
       id: 1,
-      rocket_name: "rocket 1",
-      description: "rockets description",
+      rocket_name: 'rocket 1',
+      description: 'rockets description',
       reserved: false,
-      flickr_images: ["img1", "img2"],
-    }
+      flickr_images: ['img1', 'img2'],
+    };
 
     const component = render(
       <React.StrictMode>
@@ -33,11 +33,11 @@ describe('Test suite for all Rockets features', () => {
   test('check snapshot of rocket list 2', () => {
     const rocketInst2 = {
       id: 2,
-      rocket_name: "rocket 2",
-      description: "rockets description",
+      rocket_name: 'rocket 2',
+      description: 'rockets description',
       reserved: false,
-      flickr_images: ["img1", "img2"],
-    }
+      flickr_images: ['img1', 'img2'],
+    };
 
     const component = render(
       <React.StrictMode>
@@ -77,5 +77,5 @@ describe('Test suite for all Rockets features', () => {
       </React.StrictMode>,
     );
     expect(component).toMatchSnapshot();
-  }); 
-})
+  });
+});
