@@ -20,13 +20,15 @@ const Rockets = () => {
     if (rocketsStatus === 'initial') {
       dispatch(getRockets());
     }
-  }, [rocketsStatus, dispatch]);
+  }, []);
 
   let content;
 
   if (rocketsStatus === 'loading') {
     content = <p>Loading...</p>;
   } else if (rocketsStatus === 'succeed') {
+    console.log('rocketList:');
+    console.log(rocketList);
     content = <RocketList rocketsList={rocketList} />;
   } else if (rocketsStatus === 'fail') {
     content = <p>{error}</p>;

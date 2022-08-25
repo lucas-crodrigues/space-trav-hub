@@ -1,5 +1,6 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice, current } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { bool } from 'prop-types';
 
 const BASE_URL = 'https://api.spacexdata.com/v3/rockets';
 
@@ -25,51 +26,54 @@ export const rocketSlice = createSlice({
   name: 'rockets',
   initialState,
   reducers: {
-    reserveToggle: {
-      reducer: (state, action) => {
-        console.log(state);
-        console.log(state.rockets);
-        state.rockets.map((rocket) => {
-          console.log(rocket.rocketId);
-          console.log(action.payload);
-          return (rocket.rocketId === action.payload
-            ? console.log('im true') && { ...rocket, reserved: !rocket.reserved }
-            : rocket);
-        });
-      },
-      prepare: (rocketId) => ({
-        payload: rocketId,
-      }),
-    // reserveRocket: {
-    //   reducer: (state, action) => state.rockets.map((element) => (
-    //     element.rocketId === action.payload ? { ...element, reserved: true } : element)),
+    reserveToggle: (state, action) => state.rockets.map((rocket) => {
+      if (rocket.id !== action.payload.rocket.id) {
+        return rocket;
+      }
+      return { ...rocket, reserved: !rocket.reserved };
+    }),
+
+    // reserveToggle: {
+    //   reducer: (state, action) => {
+    //     // state.rockets.map((rocket) => (rocket.rocketId === action.payload ? { ...rocket, reserved: !rocket.reserved } : rocket));
+    //     // state.rockets.map((rocket) => {
+    //     //   // if (rocket.rocketId === action.payload) {
+    //     //   //   console.log(current(rocket))
+    //     //   //   return {
+    //     //   //     ...rocket,
+    //     //   //     reserved: true,
+    //     //   //   };
+    //     //   // }
+    //     //   // return rocket;
+    //     //   console.log('The current state is:');
+    //     //   console.log(current(state));
+    //     //   console.log('The current rocket is:');
+    //     //   console.log(current(rocket));
+    //     //   console.log(`rocketId:${rocket.rocketId} = actionPayload:${action.payload} ? its ${rocket.rocketId === action.payload} also the reserved status is ${rocket.reserved}`);
+    //     //   return (rocket.rocketId === action.payload
+    //     //     ? { ...rocket, reserved: !rocket.reserved }
+    //     //     : rocket);
+    //     // });
+    //   },
     //   prepare: (rocketId) => ({
     //     payload: rocketId,
     //   }),
     // },
-    // cancelReserve: {
-    //   reducer: (state, action) => state.rockets.map((element) => (
-    //     element.rocketId === action.payload ? { ...element, reserved: false } : element)),
-    //   prepare: (rocketId) => ({
-    //     payload: rocketId,
-    //   }),
-    // },
-    },
   },
   extraReducers(builder) {
     builder
-      .addCase(getRockets.pending, (state) => ({ ...state, status: 'loading' }))
-      .addCase(getRockets.fulfilled, (state, action) => {
-        const rocketList = action.payload.map((element) => ({
-          rocketId: element.rocket_id,
-          rocketName: element.rocket_name,
-          rocketDesc: element.description,
-          rocketImg: element.flickr_images[0],
-          reserved: false,
-        }));
-        return { ...state, status: 'succeed', rockets: rocketList };
-      })
-      .addCase(getRockets.rejected, (state, action) => ({ ...state, status: 'fail', error: action.error.message }));
+      .addCase(getRockets.pending, (state) => ({ state, status: 'loading' }))
+      .addCase(getRockets.fulfilled, (state, action) => ({ state, status: 'succeed', rockets: action.payload }))
+        // const rocketList = action.payload.map((element) => ({
+        //   rocketId: element.id,
+        //   rocketName: element.rocket_name,
+        //   rocketDesc: element.description,
+        //   rocketImg: element.flickr_images[0],
+      //   //   // reserved: bool,
+      //   // }));
+      //   return { state, status: 'succeed', rockets: action.payload };
+      // })
+      .addCase(getRockets.rejected, (state, action) => ({ state, status: 'fail', error: action.error.message }));
   },
 });
 
