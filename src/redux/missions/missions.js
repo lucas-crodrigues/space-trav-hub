@@ -22,7 +22,10 @@ export const getMissionsDataAPI = () => async (dispatch) => {
       payload: selectedData,
     });
   } catch (err) {
-    console.log(err);
+    dispatch({
+      type: GET_MISSIONS_DATA,
+      payload: err,
+    });
   }
 };
 
