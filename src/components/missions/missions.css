@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+}
+
+.missions-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.mission-li {
+  display: grid;
+  grid-template-columns: 10% 1fr 10% 10%;
+  flex-grow: 1;
+}
+
+.mission-li > * {
+  padding: 0.3em 0.2em 30px;
+  height: 100%;
+  margin: 0;
+  border: 1px solid #dee2e6;
+  border-bottom: none;
+}
+
+.mission-li:nth-child(1n+2) .mission-status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 5px;
+}
+
+.mission-li:first-child * {
+  font-weight: 900;
+}
+
+.mission-li:nth-child(1n+2) .mission-status > p {
+  width: max-content;
+  border-radius: 8px;
+  padding: 0.3em;
+  background: #888;
+  color: #fff;
+}
+
+.mission-li:nth-child(1n+2) .mission-status > .joined {
+  background: #18a2b8;
+  color: #fff;
+  text-decoration: none;
+}
+
+.mission-name {
+  font-weight: 900;
+}
+
+.btn-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.btn-container > button {
+  width: max-content;
+  height: max-content;
+  font-size: 1.2em;
+  border: 1px solid #000;
+  background: transparent;
+  color: #000;
+  padding: 0.3em 0.5em;
+}
+
+.btn-container.joined > button {
+  border: 1px solid #f04;
+  color: #f04;
+}
+
+.mission-li:nth-child(even) {
+  background: #f2f2f2;
+}

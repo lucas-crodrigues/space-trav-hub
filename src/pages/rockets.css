@@ -1,0 +1,47 @@
+.rocket {
+  display: flex;
+}
+
+.rocketImage img {
+  width: 15rem;
+  height: 12rem;
+  padding: 1rem 2rem 1rem 1rem;
+}
+
+button {
+  background-color: rgb(48, 76, 255);
+  color: white;
+  height: 3rem;
+  width: 10rem;
+  border: 1px solid white;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(0.8);
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+
+.activeButton {
+  background-color: white;
+  color: rgb(20, 20, 20);
+  border: 1px solid rgb(20, 20, 20);
+}
+
+small {
+  padding: 0.1rem 0.2rem;
+  border-radius: 0.2rem;
+  margin-right: 0.2rem;
+  color: white;
+}
+
+.available {
+  background-color: green;
+}
+
+.reserved {
+  background-color: rgb(255 83 55);
+}
