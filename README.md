@@ -1,7 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 # Space Travelers' Hub
 
-This is the Space Travelers' Hub app initialized in the fourth week of the third module in the Microverse program. It was done using the SpaceEx API <br>
+This is the Space Travelers' Hub app initialized in the fourth week of the third module in the Microverse program. It was done using the SpaceEx API. <br>
+On this website you can check SpaceEx rockets and missions, book them so they appear on the My profile tab, on the profile you can follow links directly to their respective Wikipedia page to lear more about each Rocket or Mission. <br>
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Built With
@@ -16,7 +17,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Live Demo
 
- [N/A](#)
+ [Space Travelers' Hub](https://stellular-kataifi-d33ffc.netlify.app/)
 
  ## Video Preview
 
